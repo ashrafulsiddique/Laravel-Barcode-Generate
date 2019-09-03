@@ -38,7 +38,7 @@ And finally, add in the alias section config/app.php
     'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
 ]
 
-#3: Create a Controller
+#3: Create a Controller:
 
 php artisan make:controller BarcodegeneratorController
 
@@ -48,7 +48,7 @@ It will build a controller file called BarcodegeneratorController.php.
 Create a barcode() function in BarcodegeneratorController.
 
 
-//BarcodegeneratorController.php
+##BarcodegeneratorController.php
 
 <?php
 
@@ -78,51 +78,17 @@ Route::get('/barcode','BarcodegeneratorController@barcode');
 
 Create a file in resources/ views/barcodegenerator.blade.php and put this following code in it.
 
-<!-- barcodegenerator.blade.php --> 
+barcodegenerator.blade.php 
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Laravel Barcode Generator Tutorial With Example </title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-   </head>
-<body>
-   <h2>Laravel Barcode Generator Tutorial With Example</h2><br/>
-<div class="container text-center">
-<h2>One-Dimensional (1D) Barcode Types</h2><br/>
-   <div>{!!DNS1D::getBarcodeHTML(8889899, 'C39')!!}</div></br>
-   <div>{!!DNS1D::getBarcodeHTML(5436564, 'S25')!!}</div></br>
-   <div>{!!DNS1D::getBarcodeHTML(77656765, 'I25')!!}</div></br>
-   <div>{!!DNS1D::getBarcodeHTML(6435636, 'MSI+')!!}</div></br>
-   <div>{!!DNS1D::getBarcodeHTML(25547, 'POSTNET')!!}</div></br>
- </div>
-</body>
-</html>
+
 
 Here we can add One-Dimensional(1D) barcode types.
 
 ##Next, we can add Two-Dimensional(2D)barcode types. We can add 2D barcode types like ‘QRCODE’,’PDF417′,’DATAMATRIX’.
 
-<!-- barcodegenerator.blade.php --> 
+barcodegenerator.blade.php
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Laravel Barcode Generator Tutorial With Example </title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-   </head>
-<body>
-   <h2>Laravel Barcode Generator Tutorial With Example</h2><br/>
-<div class="container text-center">
-   <h2>Two-Dimensional (2D) Barcode Types</h2><br/>
-   <div>{!!DNS2D::getBarcodeHTML(335553, 'QRCODE')!!}</div></br>
-   <div>{!!DNS2D::getBarcodeHTML(142535, 'PDF417')!!}</div></br>
-   <div>{!!DNS2D::getBarcodeHTML(646, 'DATAMATRIX')!!}</div></br>
- </div>
-</body>
-</html>
+
 
 
 ## Contributing:

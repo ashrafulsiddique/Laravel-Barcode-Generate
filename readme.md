@@ -77,6 +77,7 @@ barcodegenerator.blade.php
 
 
 
+Thank You.
 
 ## Contributing:
 

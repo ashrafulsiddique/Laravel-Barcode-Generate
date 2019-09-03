@@ -50,19 +50,6 @@ Create a barcode() function in BarcodegeneratorController.
 
 ##BarcodegeneratorController.php
 
-<?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class BarcodegeneratorController extends Controller
-{
-    public function barcode()
-    {
-        return view('barcodegenerator');
-    }
-}
 
 barcode() function return view called barcodegenerator which we create shortly.
 
@@ -70,7 +57,7 @@ barcode() function return view called barcodegenerator which we create shortly.
 
 We register all route in a web.php file.
 
-//web.php
+web.php
 
 Route::get('/barcode','BarcodegeneratorController@barcode');
 
